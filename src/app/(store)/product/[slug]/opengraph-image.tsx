@@ -16,7 +16,6 @@ export const contentType = 'image/png'
 
 async function getProduct(slug: string): Promise<Product> {
   const response = await api(`/products/${slug}`, {
-    cache: 'no-store',
     next: {
       revalidate: 60 * 60, // 1 hour
     },
